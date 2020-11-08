@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, request
 app = Flask(__name__)
 
 
@@ -7,17 +7,17 @@ def hello():
     print("Headers: ")
     print(request.headers)
 
-    print("body: " + request.data )
+    print("Body: " + str(request.data))
     return "Hello World!"
 
 
 @app.route('/test')
-def hello():
+def test():
     return "You contacted archiehub"
 
 
 @app.route('/memory')
-def hello():
+def memory():
     return "TODO: reroute to archiememory"
 
 
