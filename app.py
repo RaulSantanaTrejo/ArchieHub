@@ -5,7 +5,7 @@ app = Flask(__name__)
 @app.route('/')
 def hello():
     print("Headers: ")
-    print request.headers
+    print(request.headers)
 
     print("body: " + request.data )
     return "Hello World!"
