@@ -4,5 +4,11 @@
   "description": "The central hub to handle Archie Assistant Webhooks",
   "main": "app.js",
   "author": "Raul Santana Trejo",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "@assistant/conversation": "^3.2.0",
+    "actions-on-google": "^2.13.0",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1"
+  }
 }

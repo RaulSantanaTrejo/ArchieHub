@@ -1,14 +1,22 @@
-const http = require('http');
+const express = require('express');
+const bodyParser = require('body-parser');  
 
-const hostname = '127.0.0.1';
-const port = 3000;
+const {conversation} = require('@assistant/conversation');
 
-const server = http.createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
-  res.end('Hello World');
+const app = conversation({debug: true});
+
+app.handle('rich_response', conv => {
+  conv.add('This is a card rich response.');
+  conv.add(new Card({
+    title: 'Card Title',
+    subtitle: 'Card Subtitle',
+    text: 'Card Content',
+    image: new Image({
+      url: 'https://developers.google.com/assistant/assistant_96.png',
+      alt: 'Google Assistant logo'
+    })
+  }));
 });
+express().use(bodyParser.json(), app).listen(3000);
 
-server.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`);
-});
+
