@@ -1,0 +1,8 @@
+{
+  "name": "ArchieHub",
+  "version": "1.0.0",
+  "description": "The central hub to handle Archie Assistant Webhooks",
+  "main": "app.js",
+  "author": "Raul Santana Trejo",
+  "license": "MIT"
+}
